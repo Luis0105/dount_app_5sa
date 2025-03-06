@@ -1,8 +1,8 @@
-import 'package:dount_app_5sa/tabs/burger.dart';
-import 'package:dount_app_5sa/tabs/donut.dart';
-import 'package:dount_app_5sa/tabs/pancakes.dart';
-import 'package:dount_app_5sa/tabs/pizza.dart';
-import 'package:dount_app_5sa/tabs/smoothie.dart';
+import 'package:dount_app_5sa/tabs/burger_tab.dart';
+import 'package:dount_app_5sa/tabs/donut_tab.dart';
+import 'package:dount_app_5sa/tabs/pancakes_tab.dart';
+import 'package:dount_app_5sa/tabs/pizza_tab.dart';
+import 'package:dount_app_5sa/tabs/smoothie_tab.dart';
 import 'package:dount_app_5sa/utils/my_tab.dart';
 import 'package:flutter/material.dart';
 
