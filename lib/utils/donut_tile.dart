@@ -45,9 +45,36 @@ class DonutTile extends StatelessWidget {
                         fontSize: 18,
                         color: donutColor[800]),
                   ),
-                )
+                ),
               ],
-            )
+            ),
+            // Donut frice
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 12),
+              child: Image.asset(imageName),
+            ),
+            // Donut flavor text
+            Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: Text(
+                donutFlavor,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(bottom: 12),
+              child: Text(
+                'Donut',
+                style: TextStyle(
+                  fontSize: 13,
+                  color: Colors.grey,
+                ),
+              ),
+            ),
+            // Icons
           ],
         ),
       ),
