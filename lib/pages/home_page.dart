@@ -4,6 +4,7 @@ import 'package:dount_app_5sa/tabs/pancakes_tab.dart';
 import 'package:dount_app_5sa/tabs/pizza_tab.dart';
 import 'package:dount_app_5sa/tabs/smoothie_tab.dart';
 import 'package:dount_app_5sa/utils/my_tab.dart';
+import 'package:dount_app_5sa/utils/shopping_cart.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -91,8 +92,9 @@ class _HomePageState extends State<HomePage> {
                 PanCakesTab(),
                 PizzaTab()
               ]),
-            )
+            ),
             // 4. Carrito (Car)
+            const ShoppingCart()
           ],
         ),
       ),

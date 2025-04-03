@@ -8,24 +8,24 @@ class DonutTile extends StatelessWidget {
   final dynamic donutColor;
   final dynamic imageName;
 
-  const DonutTile(
-      {super.key,
-      required this.donutFlavor,
-      required this.donutStore,
-      required this.donutPrice,
-      required this.donutColor,
-      required this.imageName});
+  const DonutTile({
+    super.key,
+    required this.donutFlavor,
+    required this.donutStore,
+    required this.donutPrice,
+    required this.donutColor,
+    required this.imageName,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: Container(
-        // color: donutColor[50],
         decoration: BoxDecoration(
-            color: donutColor[50],
-            // Esquinas redondeadas
-            borderRadius: BorderRadius.circular(24)),
+          color: donutColor[50],
+          borderRadius: BorderRadius.circular(24),
+        ),
         child: Column(
           children: [
             Row(
@@ -35,29 +35,34 @@ class DonutTile extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: donutColor[100],
                     borderRadius: const BorderRadius.only(
-                        bottomLeft: Radius.circular(24),
-                        topRight: Radius.circular(24)),
+                      bottomLeft: Radius.circular(24),
+                      topRight: Radius.circular(24),
+                    ),
                   ),
                   padding:
                       const EdgeInsets.symmetric(vertical: 8, horizontal: 18),
                   child: Text(
                     '\$$donutPrice',
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                        color: donutColor[800]),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      color: donutColor[800],
+                    ),
                   ),
                 ),
               ],
             ),
-            // Donut frice
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 12),
-              child: Image.asset(imageName),
+            // Donut image
+            Expanded(
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 4, vertical: 12),
+                child: Image.asset(imageName),
+              ),
             ),
             // Donut flavor text
             Padding(
-              padding: EdgeInsets.only(bottom: 4),
+              padding: const EdgeInsets.only(bottom: 4),
               child: Text(
                 donutFlavor,
                 style: const TextStyle(
@@ -70,37 +75,26 @@ class DonutTile extends StatelessWidget {
               donutStore,
               style: TextStyle(
                 fontSize: 13,
-                color: Colors.grey,
+                color: Colors.grey[600],
               ),
             ),
             // Icons
-            Row(
-              children: [
-                Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Padding(
-                    padding: const EdgeInsets.all(30.0),
-                    child: Icon(
-                      Icons.favorite_border_outlined,
-                      size: 50,
-                    ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Icon(
+                    Icons.favorite_border,
+                    color: Colors.pink,
                   ),
-                ),
-                Align(
-                  alignment: Alignment.bottomRight,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 275),
-                    child: Text(
-                      'Add',
-                      style: TextStyle(
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
-                          decoration: TextDecoration.underline),
-                    ),
+                  Icon(
+                    Icons.add,
+                    color: Colors.grey[600],
                   ),
-                ),
-              ],
-            )
+                ],
+              ),
+            ),
           ],
         ),
       ),
