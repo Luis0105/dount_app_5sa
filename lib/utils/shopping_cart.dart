@@ -11,11 +11,12 @@ class ShoppingCart extends StatelessWidget {
       color: Colors.white,
       padding: const EdgeInsets.all(16),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const Padding(
             padding: EdgeInsets.only(left: 16),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   '2 Items | \$45 ',
