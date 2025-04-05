@@ -35,6 +35,18 @@ class _HomePageState extends State<HomePage> {
     ),
   ];
 
+  // NUEVO: variables para el carrito
+  int totalItems = 0;
+  int totalPrice = 0;
+
+  // NUEVO: función que se llama al presionar "+"
+  void addToCart(String flavor, int price) {
+    setState(() {
+      totalItems += 1;
+      totalPrice += price;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -47,9 +59,9 @@ class _HomePageState extends State<HomePage> {
             Icons.menu,
             color: Colors.grey[800],
           ),
-          actions: [
+          actions: const [
             Padding(
-              padding: const EdgeInsets.only(right: 24.0),
+              padding: EdgeInsets.only(right: 24.0),
               child: Icon(Icons.person),
             )
           ],
@@ -62,7 +74,7 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 children: [
                   Text(
-                    "I want to eat ",
+                    "I want to ",
                     style: TextStyle(fontSize: 32),
                   ),
                   Text(
@@ -88,15 +100,18 @@ class _HomePageState extends State<HomePage> {
             // 3. Contenido de pestañas (TabBarView)
             Expanded(
               child: TabBarView(children: [
-                DonutTab(),
-                BurgerTab(),
-                SmoothieTab(),
-                PancakesTab(),
-                PizzaTab()
+                DonutTab(onDonutAdded: addToCart), // NUEVO
+                BurgerTab(onDonutAdded: addToCart),
+                SmoothieTab(onDonutAdded: addToCart),
+                PancakesTab(onDonutAdded: addToCart),
+                PizzaTab(onDonutAdded: addToCart)
               ]),
             ),
-            // 4. Carrito (Car)
-            const ShoppingCart()
+            // 4. Carrito (Cart) con datos dinámicos
+            ShoppingCart(
+              totalItems: totalItems,
+              totalPrice: totalPrice,
+            ),
           ],
         ),
       ),

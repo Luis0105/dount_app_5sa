@@ -7,6 +7,7 @@ class DonutTile extends StatelessWidget {
   // dynamic porque será de tipo color
   final dynamic donutColor;
   final dynamic imageName;
+  final VoidCallback onAdd; // NUEVO: callback para botón "+"
 
   const DonutTile({
     super.key,
@@ -15,6 +16,7 @@ class DonutTile extends StatelessWidget {
     required this.donutPrice,
     required this.donutColor,
     required this.imageName,
+    required this.onAdd, // NUEVO
   });
 
   @override
@@ -62,7 +64,7 @@ class DonutTile extends StatelessWidget {
             ),
             // Donut flavor text
             Padding(
-              padding: const EdgeInsets.only(bottom: 4),
+              padding: const EdgeInsets.only(bottom: 5),
               child: Text(
                 donutFlavor,
                 style: const TextStyle(
@@ -88,9 +90,10 @@ class DonutTile extends StatelessWidget {
                     Icons.favorite_border,
                     color: Colors.pink,
                   ),
-                  Icon(
-                    Icons.add,
-                    color: Colors.grey[600],
+                  // NUEVO: botón que llama a onAdd
+                  IconButton(
+                    icon: Icon(Icons.add, color: Colors.grey[600]),
+                    onPressed: onAdd,
                   ),
                 ],
               ),

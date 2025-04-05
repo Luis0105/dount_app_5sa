@@ -2,34 +2,71 @@ import 'package:dount_app_5sa/utils/donut_tile.dart';
 import 'package:flutter/material.dart';
 
 class DonutTab extends StatelessWidget {
-// list of donuts
+  // NUEVO: callback para cuando se añade una dona
+  final Function(String flavor, int price) onDonutAdded;
+
+  // list of donuts
   final List donutsOnSale = [
     // [ donutFlavor, donutStore, donutPrice, donutColor, imageName ]
     [
-      "Ice Cream",
+      "Dona de Chocolate",
       "Krispy Kremex",
-      "36",
+      "40",
       Colors.blue,
-      "lib/images/icecream_donut.png"
+      "lib/images/DonaChocolate.png"
     ],
     [
-      "Strawberry",
-      "Juanito Donut",
+      "Dona Rellena de Crema",
+      "Krispy Kremex",
       "45",
       Colors.red,
-      "lib/images/strawberry_donut.png"
+      "lib/images/DonaRellena.png"
     ],
-    ["Grape Ape", "Donuts", "84", Colors.purple, "lib/images/grape_donut.png"],
     [
-      "Choco",
-      "Mike Donuts",
+      "Dona de Fresa",
+      "Krispy Kremex",
+      "85",
+      Colors.purple,
+      "lib/images/DonaFresa.png"
+    ],
+    [
+      "Dona de Frambuesa",
+      "Krispy Kremex",
       "95",
       Colors.brown,
-      "lib/images/chocolate_donut.png"
+      "lib/images/DonaFrambuesa.png"
+    ],
+    [
+      "Dona Rellena de Nutella",
+      "Krispy Kremex",
+      "35",
+      Colors.blue,
+      "lib/images/DonaNutella.png"
+    ],
+    [
+      "Dona de Oreo",
+      "Krispy Kremex",
+      "50",
+      Colors.red,
+      "lib/images/DonaOreo.png"
+    ],
+    [
+      "Dona Con Miel",
+      "Krispy Kremex",
+      "30",
+      Colors.purple,
+      "lib/images/DonaMiel.png"
+    ],
+    [
+      "Dona de Almendra",
+      "Krispy Kremex",
+      "55",
+      Colors.brown,
+      "lib/images/DonaAlmendra.png"
     ],
   ];
 
-  DonutTab({super.key});
+  DonutTab({super.key, required this.onDonutAdded});
 
   @override
   Widget build(BuildContext context) {
@@ -39,18 +76,25 @@ class DonutTab extends StatelessWidget {
             // Número de columnas
             crossAxisCount: 2,
             // Proporción entre ancho y alto
-            childAspectRatio: 1 / 1.8),
+            childAspectRatio: 1 / 1.5),
         // Cuántos elementos
-        itemCount: 4,
+        itemCount: donutsOnSale.length,
         padding: const EdgeInsets.all(12),
         // Qué elementos se construirá
-        itemBuilder: (contex, index) {
+        itemBuilder: (context, index) {
           return DonutTile(
             donutFlavor: donutsOnSale[index][0],
             donutStore: donutsOnSale[index][1],
             donutPrice: donutsOnSale[index][2],
             donutColor: donutsOnSale[index][3],
             imageName: donutsOnSale[index][4],
+            // NUEVO: Llamada a callback
+            onAdd: () {
+              onDonutAdded(
+                donutsOnSale[index][0],
+                int.parse(donutsOnSale[index][2]),
+              );
+            },
           );
         });
   }
