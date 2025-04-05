@@ -2,67 +2,67 @@ import 'package:dount_app_5sa/utils/donut_tile.dart';
 import 'package:flutter/material.dart';
 
 class PancakesTab extends StatelessWidget {
-  // NUEVO: callback para cuando se añade una dona
+  // Callback para cuando se añade una dona
   final Function(String flavor, int price) onDonutAdded;
 
   // list of donuts
   final List donutsOnSale = [
     // [ donutFlavor, donutStore, donutPrice, donutColor, imageName ]
     [
-      "Dona de Chocolate",
-      "Krispy Kremex",
-      "40",
+      "Pancakes Clásicos",
+      "Kodiak Cakes",
+      "60",
       Colors.blue,
-      "lib/images/DonaChocolate.png"
+      "lib/images/PancakesClasico.png"
     ],
     [
-      "Dona Rellena de Crema",
-      "Krispy Kremex",
-      "45",
+      "Pancakes con Frutas",
+      "Kodiak Cakes",
+      "75",
       Colors.red,
-      "lib/images/DonaRellena.png"
+      "lib/images/PancakeFruta.png"
     ],
     [
-      "Dona de Fresa",
-      "Krispy Kremex",
-      "85",
+      "Pancakes Oreo",
+      "Kodiak Cakes",
+      "90",
       Colors.purple,
-      "lib/images/DonaFresa.png"
+      "lib/images/PancakeOreo.png"
     ],
     [
-      "Dona de Frambuesa",
-      "Krispy Kremex",
+      "Pancakes Red Velvet",
+      "Kodiak Cakes",
       "95",
       Colors.brown,
-      "lib/images/DonaFrambuesa.png"
+      "lib/images/PancakeVelvet.png"
     ],
     [
-      "Dona Rellena de Nutella",
-      "Krispy Kremex",
-      "35",
+      "Pancakes con Helado",
+      "Kodiak Cakes",
+      "100",
       Colors.blue,
-      "lib/images/DonaNutella.png"
+      "lib/images/PancakeHelado.png"
     ],
     [
-      "Dona de Oreo",
-      "Krispy Kremex",
-      "50",
+      "Pancakes de Manzana",
+      "Kodiak Cakes",
+      "80",
       Colors.red,
-      "lib/images/DonaOreo.png"
+      "lib/images/PancakeManzana.png"
     ],
     [
-      "Dona Con Miel",
-      "Krispy Kremex",
-      "30",
+      "Pancakes de Canela",
+      "Kodiak Cakes",
+      "70",
       Colors.purple,
-      "lib/images/DonaMiel.png"
+      "lib/images/PancakeCanela.png"
     ],
     [
-      "Dona de Almendra",
-      "Krispy Kremex",
-      "55",
+      "Pancakes de Coco",
+      "Kodiak Cakes",
+      "85",
       Colors.brown,
-      "lib/images/DonaAlmendra.png"
+      "lib/images/PancakeCoco.png"
     ],
   ];
 
@@ -76,7 +76,7 @@ class PancakesTab extends StatelessWidget {
             // Número de columnas
             crossAxisCount: 2,
             // Proporción entre ancho y alto
-            childAspectRatio: 1 / 1.5),
+            childAspectRatio: 1 / 1.8),
         // Cuántos elementos
         itemCount: donutsOnSale.length,
         padding: const EdgeInsets.all(12),
@@ -88,7 +88,7 @@ class PancakesTab extends StatelessWidget {
             donutPrice: donutsOnSale[index][2],
             donutColor: donutsOnSale[index][3],
             imageName: donutsOnSale[index][4],
-            // NUEVO: Llamada a callback
+            // Llamada a callback
             onAdd: () {
               onDonutAdded(
                 donutsOnSale[index][0],

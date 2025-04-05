@@ -7,7 +7,7 @@ class DonutTile extends StatelessWidget {
   // dynamic porque será de tipo color
   final dynamic donutColor;
   final dynamic imageName;
-  final VoidCallback onAdd; // NUEVO: callback para botón "+"
+  final VoidCallback onAdd; // Callback para botón "+"
 
   const DonutTile({
     super.key,
@@ -16,7 +16,7 @@ class DonutTile extends StatelessWidget {
     required this.donutPrice,
     required this.donutColor,
     required this.imageName,
-    required this.onAdd, // NUEVO
+    required this.onAdd,
   });
 
   @override
@@ -90,7 +90,7 @@ class DonutTile extends StatelessWidget {
                     Icons.favorite_border,
                     color: Colors.pink,
                   ),
-                  // NUEVO: botón que llama a onAdd
+                  // Botón que llama a onAdd
                   IconButton(
                     icon: Icon(Icons.add, color: Colors.grey[600]),
                     onPressed: onAdd,

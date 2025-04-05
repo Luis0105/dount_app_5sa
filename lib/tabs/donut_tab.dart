@@ -2,7 +2,7 @@ import 'package:dount_app_5sa/utils/donut_tile.dart';
 import 'package:flutter/material.dart';
 
 class DonutTab extends StatelessWidget {
-  // NUEVO: callback para cuando se añade una dona
+  // Callback para cuando se añade una dona
   final Function(String flavor, int price) onDonutAdded;
 
   // list of donuts
@@ -76,7 +76,7 @@ class DonutTab extends StatelessWidget {
             // Número de columnas
             crossAxisCount: 2,
             // Proporción entre ancho y alto
-            childAspectRatio: 1 / 1.5),
+            childAspectRatio: 1 / 1.8),
         // Cuántos elementos
         itemCount: donutsOnSale.length,
         padding: const EdgeInsets.all(12),
@@ -88,7 +88,7 @@ class DonutTab extends StatelessWidget {
             donutPrice: donutsOnSale[index][2],
             donutColor: donutsOnSale[index][3],
             imageName: donutsOnSale[index][4],
-            // NUEVO: Llamada a callback
+            // Llamada a callback
             onAdd: () {
               onDonutAdded(
                 donutsOnSale[index][0],

@@ -2,67 +2,67 @@ import 'package:dount_app_5sa/utils/donut_tile.dart';
 import 'package:flutter/material.dart';
 
 class BurgerTab extends StatelessWidget {
-  // NUEVO: callback para cuando se añade una dona
+  // Callback para cuando se añade una dona
   final Function(String flavor, int price) onDonutAdded;
 
   // list of donuts
   final List donutsOnSale = [
     // [ donutFlavor, donutStore, donutPrice, donutColor, imageName ]
     [
-      "Dona de Chocolate",
-      "Krispy Kremex",
-      "40",
-      Colors.blue,
-      "lib/images/DonaChocolate.png"
-    ],
-    [
-      "Dona Rellena de Crema",
-      "Krispy Kremex",
-      "45",
-      Colors.red,
-      "lib/images/DonaRellena.png"
-    ],
-    [
-      "Dona de Fresa",
-      "Krispy Kremex",
-      "85",
-      Colors.purple,
-      "lib/images/DonaFresa.png"
-    ],
-    [
-      "Dona de Frambuesa",
-      "Krispy Kremex",
+      "Hamburguesa Clásica",
+      "McDonald's",
       "95",
-      Colors.brown,
-      "lib/images/DonaFrambuesa.png"
-    ],
-    [
-      "Dona Rellena de Nutella",
-      "Krispy Kremex",
-      "35",
       Colors.blue,
-      "lib/images/DonaNutella.png"
+      "lib/images/HambClasica.png"
     ],
     [
-      "Dona de Oreo",
-      "Krispy Kremex",
-      "50",
+      "Cheeseburger Doble",
+      "McDonald's",
+      "115",
       Colors.red,
-      "lib/images/DonaOreo.png"
+      "lib/images/HambDoble.png"
     ],
     [
-      "Dona Con Miel",
-      "Krispy Kremex",
-      "30",
+      "Hamburguesa BBQ",
+      "McDonald's",
+      "125",
       Colors.purple,
-      "lib/images/DonaMiel.png"
+      "lib/images/HambBBQ.png"
     ],
     [
-      "Dona de Almendra",
-      "Krispy Kremex",
-      "55",
+      "Hamburguesa Cheese",
+      "McDonald's",
+      "195",
       Colors.brown,
-      "lib/images/DonaAlmendra.png"
+      "lib/images/HambBlue.png"
+    ],
+    [
+      "Hamburguesa Veggie",
+      "McDonald's",
+      "105",
+      Colors.blue,
+      "lib/images/HambVeg.png"
+    ],
+    [
+      "Hamburguesa Mexicana",
+      "McDonald's",
+      "150",
+      Colors.red,
+      "lib/images/HambMexicana.png"
+    ],
+    [
+      "Hamburguesa de Pollo",
+      "McDonald's",
+      "110",
+      Colors.purple,
+      "lib/images/HambPollo.png"
+    ],
+    [
+      "Hamburguesa Smash",
+      "McDonald's",
+      "155",
+      Colors.brown,
+      "lib/images/HambSmash.png"
     ],
   ];
 
@@ -76,7 +76,7 @@ class BurgerTab extends StatelessWidget {
             // Número de columnas
             crossAxisCount: 2,
             // Proporción entre ancho y alto
-            childAspectRatio: 1 / 1.5),
+            childAspectRatio: 1 / 1.9),
         // Cuántos elementos
         itemCount: donutsOnSale.length,
         padding: const EdgeInsets.all(12),
@@ -88,7 +88,7 @@ class BurgerTab extends StatelessWidget {
             donutPrice: donutsOnSale[index][2],
             donutColor: donutsOnSale[index][3],
             imageName: donutsOnSale[index][4],
-            // NUEVO: Llamada a callback
+            // Llamada a callback
             onAdd: () {
               onDonutAdded(
                 donutsOnSale[index][0],

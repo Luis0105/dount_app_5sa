@@ -2,67 +2,67 @@ import 'package:dount_app_5sa/utils/donut_tile.dart';
 import 'package:flutter/material.dart';
 
 class SmoothieTab extends StatelessWidget {
-  // NUEVO: callback para cuando se añade una dona
+  // Callback para cuando se añade una dona
   final Function(String flavor, int price) onDonutAdded;
 
   // list of donuts
   final List donutsOnSale = [
     // [ donutFlavor, donutStore, donutPrice, donutColor, imageName ]
     [
-      "Dona de Chocolate",
-      "Krispy Kremex",
-      "40",
+      "Smoothie de Fresa",
+      "Coffeetech",
+      "50",
       Colors.blue,
-      "lib/images/DonaChocolate.png"
+      "lib/images/SmooFresa.png"
     ],
     [
-      "Dona Rellena de Crema",
-      "Krispy Kremex",
-      "45",
+      "Smoothie Tropical",
+      "Coffeetech",
+      "55",
       Colors.red,
-      "lib/images/DonaRellena.png"
+      "lib/images/SmooTropical.png"
     ],
     [
-      "Dona de Fresa",
-      "Krispy Kremex",
-      "85",
+      "Smoothie Verde",
+      "Coffeetech",
+      "65",
       Colors.purple,
-      "lib/images/DonaFresa.png"
+      "lib/images/SmooVerde.png"
     ],
     [
-      "Dona de Frambuesa",
-      "Krispy Kremex",
-      "95",
+      "Smoothie de Avena",
+      "Coffeetech",
+      "75",
       Colors.brown,
-      "lib/images/DonaFrambuesa.png"
+      "lib/images/SmooAvena.png"
     ],
     [
-      "Dona Rellena de Nutella",
-      "Krispy Kremex",
-      "35",
+      "Smoothie Detox",
+      "Coffeetech",
+      "55",
       Colors.blue,
-      "lib/images/DonaNutella.png"
+      "lib/images/SmooDetox.png"
     ],
     [
-      "Dona de Oreo",
-      "Krispy Kremex",
+      "Smoothie de Durazno",
+      "Coffeetech",
       "50",
       Colors.red,
-      "lib/images/DonaOreo.png"
+      "lib/images/SmooDurazno.png"
     ],
     [
-      "Dona Con Miel",
-      "Krispy Kremex",
-      "30",
+      "Smoothie de Chocolate",
+      "Coffeetech",
+      "70",
       Colors.purple,
-      "lib/images/DonaMiel.png"
+      "lib/images/SmooChocolate.png"
     ],
     [
-      "Dona de Almendra",
-      "Krispy Kremex",
-      "55",
+      "Smoothie de Zarzamora",
+      "Coffeetech",
+      "50",
       Colors.brown,
-      "lib/images/DonaAlmendra.png"
+      "lib/images/SmooZarzamora.png"
     ],
   ];
 
@@ -76,7 +76,7 @@ class SmoothieTab extends StatelessWidget {
             // Número de columnas
             crossAxisCount: 2,
             // Proporción entre ancho y alto
-            childAspectRatio: 1 / 1.5),
+            childAspectRatio: 1 / 1.8),
         // Cuántos elementos
         itemCount: donutsOnSale.length,
         padding: const EdgeInsets.all(12),
@@ -88,7 +88,7 @@ class SmoothieTab extends StatelessWidget {
             donutPrice: donutsOnSale[index][2],
             donutColor: donutsOnSale[index][3],
             imageName: donutsOnSale[index][4],
-            // NUEVO: Llamada a callback
+            // Llamada a callback
             onAdd: () {
               onDonutAdded(
                 donutsOnSale[index][0],

@@ -35,11 +35,11 @@ class _HomePageState extends State<HomePage> {
     ),
   ];
 
-  // NUEVO: variables para el carrito
+  // Variables para el carrito
   int totalItems = 0;
   int totalPrice = 0;
 
-  // NUEVO: función que se llama al presionar "+"
+  // Función que se llama al presionar "+"
   void addToCart(String flavor, int price) {
     setState(() {
       totalItems += 1;
@@ -100,7 +100,7 @@ class _HomePageState extends State<HomePage> {
             // 3. Contenido de pestañas (TabBarView)
             Expanded(
               child: TabBarView(children: [
-                DonutTab(onDonutAdded: addToCart), // NUEVO
+                DonutTab(onDonutAdded: addToCart),
                 BurgerTab(onDonutAdded: addToCart),
                 SmoothieTab(onDonutAdded: addToCart),
                 PancakesTab(onDonutAdded: addToCart),
